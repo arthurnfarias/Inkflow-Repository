@@ -7,6 +7,11 @@ assets:environment
 assets:precompile
 cache_digests:dependencies
 cache_digests:nested_dependencies
+cucumber
+cucumber:all
+cucumber:ok
+cucumber:rerun
+cucumber:wip
 db:create
 db:drop
 db:environment:set
@@ -35,7 +40,10 @@ secret
 spec
 spec:controllers
 spec:helpers
+spec:lib
 spec:models
+spec:requests
+spec:routing
 spec:views
 stats
 test

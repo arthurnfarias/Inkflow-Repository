@@ -5,3 +5,18 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+body, 
+html {
+	min-height:100%;
+}
+
+
+body {
+	background-image: url(wallpaper/wallpaper2.jpg);
+	background-repeat:no-repeat;
+	background-size: cover;
+	
+	background-opacity: 0.5;
+    background-filter: alpha(opacity=50);
+}
+
