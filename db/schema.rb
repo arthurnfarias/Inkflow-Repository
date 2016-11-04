@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103181542) do
+ActiveRecord::Schema.define(version: 20161104035134) do
+
+  create_table "okrs", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.integer  "team_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["team_id"], name: "index_okrs_on_team_id"
+  end
+
+  create_table "teams", force: :cascade do |t|
+    t.string   "title"
+    t.text     "description"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false

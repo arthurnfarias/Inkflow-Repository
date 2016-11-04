@@ -4,7 +4,7 @@ RSpec.describe "teams/edit", type: :view do
   before(:each) do
     @team = assign(:team, Team.create!(
       :title => "MyString",
-      :description => "MyString"
+      :description => "MyText"
     ))
   end
 
@@ -15,7 +15,7 @@ RSpec.describe "teams/edit", type: :view do
 
       assert_select "input#team_title[name=?]", "team[title]"
 
-      assert_select "input#team_description[name=?]", "team[description]"
+      assert_select "textarea#team_description[name=?]", "team[description]"
     end
   end
 end

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  
+
+
+  resources :teams do
+    resources :okrs
+end
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
   devise_for :users

@@ -5,11 +5,13 @@ RSpec.describe "okrs/index", type: :view do
     assign(:okrs, [
       Okr.create!(
         :title => "Title",
-        :description => "Description"
+        :description => "MyText",
+        :team => nil
       ),
       Okr.create!(
         :title => "Title",
-        :description => "Description"
+        :description => "MyText",
+        :team => nil
       )
     ])
   end
@@ -17,6 +19,7 @@ RSpec.describe "okrs/index", type: :view do
   it "renders a list of okrs" do
     render
     assert_select "tr>td", :text => "Title".to_s, :count => 2
-    assert_select "tr>td", :text => "Description".to_s, :count => 2
+    assert_select "tr>td", :text => "MyText".to_s, :count => 2
+    assert_select "tr>td", :text => nil.to_s, :count => 2
   end
 end
