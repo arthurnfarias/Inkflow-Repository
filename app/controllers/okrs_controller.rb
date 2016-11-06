@@ -67,12 +67,10 @@ class OkrsController < ApplicationController
   # DELETE /okrs/1
   # DELETE /okrs/1.json
   def destroy
+
     @okr.destroy
-      redirect_to team_okrs_path(@team), notice: "A Okr foi excluída com sucesso!"
-    #respond_to do |format|
-      #format.html { redirect_to okrs_url, notice: 'Okr was successfully destroyed.' }
-      #format.json { head :no_content }
-   # end
+    redirect_to team_okrs_path(@team)
+
   end
 
   private

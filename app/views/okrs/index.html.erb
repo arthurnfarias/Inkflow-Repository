@@ -20,7 +20,7 @@
         <td><%= @team.title %></td>
         <td><%= link_to 'Mostrar', {:action => 'show', :id => okr.id} %></td>
         <td><%= link_to 'Editar', {:action => 'edit', :id => okr.id} %></td>
-        <td><%= link_to 'Excluir', {:action => 'destroy', :id => okr.id, method: :delete, data: { confirm: 'Tem certeza?' }} %></td>
+        <td><%= link_to 'Excluir', {:action => 'destroy', :id => okr.id}, method: :delete, data: { confirm: 'Tem certeza' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'Nova Okr', new_team_okr_path %>
+<%= link_to 'Nova Okr', new_team_okr_path(@team) %>
