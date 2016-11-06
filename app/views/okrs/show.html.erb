@@ -1,19 +1,19 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Title:</strong>
+  <strong>Nome:</strong>
   <%= @okr.title %>
 </p>
 
 <p>
-  <strong>Description:</strong>
+  <strong>Descrição:</strong>
   <%= @okr.description %>
 </p>
 
 <p>
-  <strong>Team:</strong>
-  <%= @okr.team_id %>
+  <strong>Equipe:</strong>
+  <%= @team.title %>
 </p>
 
-<%= link_to 'Edit', edit_team_okr_path(@okr) %> |
-<%= link_to 'Back', team_okrs_path %>
+<%= link_to 'Editar', edit_team_okr_path(@okr) %> |
+<%= link_to 'Voltar', team_okrs_path %>

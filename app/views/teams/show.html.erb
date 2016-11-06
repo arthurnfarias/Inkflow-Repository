@@ -8,7 +8,9 @@
 <p>
   <strong>Description:</strong>
   <%= @team.description %>
+  <%= link_to 'Mostrar Okrs deste time', team_okrs_path(@team) %>
 </p>
 
-<%= link_to 'Edit', edit_team_path(@team) %> |
-<%= link_to 'Back', teams_path %>
+
+<%= link_to 'Editar', edit_team_path(@team) %> |
+<%= link_to 'Voltar', teams_path %>

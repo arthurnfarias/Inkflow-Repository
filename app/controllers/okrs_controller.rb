@@ -11,6 +11,7 @@ class OkrsController < ApplicationController
   # GET /okrs/1
   # GET /okrs/1.json
   def show
+
   end
 
   # GET /okrs/new
@@ -51,8 +52,8 @@ class OkrsController < ApplicationController
   def update
 
       if @okr.update(okr_params)
-        flash[:sucess] = "Sucesso!"
-          redirect_to action: "show", id: @okr.id
+
+          redirect_to action: "show", id: @okr.id, notice: "A Okr foi editado com sucesso!"
         #format.html { redirect_to @okr, notice: 'Okr was successfully updated.' }
         #format.json { render :show, status: :ok, location: @okr }
       else
@@ -67,10 +68,11 @@ class OkrsController < ApplicationController
   # DELETE /okrs/1.json
   def destroy
     @okr.destroy
-    respond_to do |format|
-      format.html { redirect_to okrs_url, notice: 'Okr was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+      redirect_to team_okrs_path(@team), notice: "A Okr foi excluída com sucesso!"
+    #respond_to do |format|
+      #format.html { redirect_to okrs_url, notice: 'Okr was successfully destroyed.' }
+      #format.json { head :no_content }
+   # end
   end
 
   private

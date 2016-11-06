@@ -5,22 +5,22 @@
 <table>
   <thead>
     <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th>Team</th>
+      <th>Nome</th>
+      <th>Descrição</th>
+      <th>Equipe</th>
       <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
-    <% @okrs.each do |okr| %>
+    <% @team.okrs.each do |okr| %>
       <tr>
         <td><%= okr.title %></td>
         <td><%= okr.description %></td>
-        <td><%= okr.team_id %></td>
-        <td><%= link_to 'Show', {:action => 'show', :id => okr.id} %></td>
-        <td><%= link_to 'Edit', {:action => 'edit', :id => okr.id} %></td>
-        <td><%= link_to 'Destroy', {:action => 'destroy', :id => okr.id}, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= @team.title %></td>
+        <td><%= link_to 'Mostrar', {:action => 'show', :id => okr.id} %></td>
+        <td><%= link_to 'Editar', {:action => 'edit', :id => okr.id} %></td>
+        <td><%= link_to 'Excluir', {:action => 'destroy', :id => okr.id, method: :delete, data: { confirm: 'Tem certeza?' }} %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +28,4 @@
 
 <br>
 
-<%= link_to 'New Okr', new_team_okr_path %>
+<%= link_to 'Nova Okr', new_team_okr_path %>
